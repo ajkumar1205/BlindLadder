@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+body {
+    position: fixed;
+    background-image: url(extraMaterial/game_back.png);
+    /* background-repeat: no-repeat; */
+    background-size: 1400px 900px;
+    background-attachment: fixed;
+}
+#description_box {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2.2vw;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 50vh;
+    left: 50vw;
+    z-index: 10;
+    background-color: antiquewhite;
+    width: 51vw;
+    border-top: 10px solid orangered;
+    border-left: 10px solid green;
+    border-right: 10px solid yellow;
+    border-bottom: 10px solid blue;
+    box-shadow: 0px 0px 20px 10px gray;
+    /* border-radius: 30px; */
+}
+#game_title {
+    font-size: 5vw;
+    font-family:'Dancing Script', cursive;
+    color: blueviolet;
+}
+#game_board {
+    transform: translate(-50%, -50%);
+    top: 50vh;
+    left: 50vw;
+    position:fixed;
+    width: 544px;
+    height: 540px;
+    padding-top: 4px;
+    background-color: white;
+    border-top: solid 6px orangered;
+    border-right: solid 6px rgb(45, 17, 17);
+    border-bottom: solid 6px blueviolet;
+}
+#score_card {
+    display: none;
+    transform: translate(-50%, -50%);
+    background-image: url(extraMaterial/score_back.png);
+    background-size: 100% 100%;
+    position: fixed;
+    top: 50vh;
+    left: calc(50vw - 420px);
+    width: 275px;
+    height: 544px;
+    border-top: solid 6px orangered;
+    border-left: solid 6px rgb(119, 148, 227);
+    border-bottom: solid 6px blueviolet;
+}
+.board {
+    padding: 0px;
+    display: inline;
+    width: 50px;
+}
+.board_div {
+    position: relative;
+    margin-left: 4px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+    animation: snakeAnimation 2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+#game_start {
+    float:right;
+    padding: 0px;
+    margin: 10px;
+    text-decoration: none;
+    height: 40px;
+    width: 80px;
+    background-color: blueviolet;
+    color: white;
+    font-weight: 900;
+}
+.player_images {
+    width: 32px;
+    border-radius: 50%;
+    border: solid 4px white;
+    box-shadow: 0px 0px 10px 1px black;
+}
+.name_score {
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.player_names {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 5px;
+    font-size: 25px;
+    background-color: white;
+    border-radius: 8px;
+}
+#dice_div {
+    position: fixed;
+    bottom: 10px;
+    left: 15px;
+    background-color: whitesmoke;
+    height: 175px;
+    width: 235px;
+    border: solid 6px black;
+    border-radius: 16px;
+}
+#contact_us {
+    display: none;
+    position: fixed;
+    right: 0px;
+    bottom: 0px ;
+    height: 100vh;
+    width: 255px;
+    margin-top: 0px;
+    padding: 0px;
+    background-color: rgb(69, 69, 69);
+    border-left: solid 30px black;
+    z-index: 30;
+}
+#dice {
+    display: inline-block;
+    transform: translate(-50%,-50%);
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 70px;
+    height: 70px;
+    background-color: black;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 5px gray;
+}
+.dice_dots6 {
+    display: inline-block;
+    background-color: white;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 12px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+.dice_dots5 {
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 10px;
+    display: inline-block;
+}
+#middle_dot5 {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+.dice_dots4 {
+    display: inline-block;
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    margin: 10px;
+    border-radius: 50%;
+}
+.dice_dots3 {
+    transform: translate(-50%, -50%);
+    position: relative;
+    top: 50%;
+    left: 20%;
+    margin-right: 5px;
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dice_dots2 {
+    transform: translate(-50%, -50%);
+    position: relative;
+    margin-bottom: 13px;
+    top: 30%;
+    left: 50%;
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+.dice_dots1 {
+    transform: translate(-50%, -50%);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+.table_data {
+    padding-top: 6px;
+}
+.moving_images {
+    display: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    bottom: -11px;
+    left: 29px;
+    width: 32px;
+    border-radius: 50%;
+    border: solid 4px white;
+    box-shadow: 0px 0px 10px 1px black;
+}
+#up_icons {
+    /* float: right; */
+    text-align: left;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.page_img {
+    height: 30px;
+}
+#dn_icons {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+#ajay {
+    font-family: 'Dancing Script', cursive;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+#scroll {
+    margin-top: 5.4vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    color: rgb(30, 30, 30);
+    font-weight: 900;
+}
+#title_div {
+    text-align: center;
+    font-size: 80px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#para {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    color: rgb(30, 30, 30);
+    font-weight: 900;
+}
+#feedback {
+    transform: translateX(-50%);
+    position: relative;
+    background-color: rgb(100, 100, 100);
+    margin-top: 20px;
+    left: 50%;
+}
+#submit {
+    margin: 5px;
+    position: relative;
+    transform: translateX(-50%);
+    background-color: black;
+    color: rgb(100, 100, 100);
+    left: 50%;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.planes {
+    display: none;
+    width: 200px;
+    height: 240px;
+    background-size: 100% 100%;
+    position: fixed;
+    left: 0px;
+    bottom: -270px;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+}
+#restart {
+    position: fixed;
+    display: none;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    width: 585px;
+}
+.gstart {
+    margin: 5px;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    font-size: 65px;
+    text-align: center;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 5px gray;
+}
+@keyframes snakeAnimation {
+    0% {background-size: 50px 50px;}
+    20% {background-size: 0px 0px;}
+    50% {background-size: 0px 0px;}
+    80% {background-size: 0px 0px;}
+    100% {background-size: 50px 50px;}
+}

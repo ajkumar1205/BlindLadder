@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlindLadder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="contact_us">
+        <div id="up_icons">
+            <a href="#" ><img src="extraMaterial/Icons/facebook_icon.png" alt="" class="page_img"></a>
+            <a href="#" ><img src="extraMaterial/Icons/insta_icon.png" alt="" class="page_img"></a>
+            <a href="#" ><img src="extraMaterial/Icons/gmail_icon.png" alt="" class="page_img"></a>
+        </div>
+        <div id="dn_icons">
+            <a href="#" ><img src="extraMaterial/Icons/github_icon.png" alt="" class="page_img"></a>
+            <a href="#" ><img src="extraMaterial/Icons/insta_icon.png" alt="" class="page_img"></a>
+            <a href="#" ><img src="extraMaterial/Icons/linkedin_icon.png" alt="" class="page_img"></a>
+        </div>
+        <span id="ajay">Made By:-<br> Ajay Thakur</span>
+        <div id="scroll">Tap on box to scroll dice</div>
+        <div id="title_div">Blind-<br>Ladder</div>
+        <div id="para">
+            If you have any kind of suggestion or ideas for improvement,
+            please share your valuable thoughts. It will be glad for us to 
+            listen you. We will do things with your way suggested as much as we could.<br>
+            Give your feedback below.<br>
+        </div>
+        <textarea name="feedback" id="feedback" cols="27" rows="5"></textarea>
+        <input type="button" value="Submit" id="submit">
+    </div>
+    <div id="description_box">
+        <div id="game_title"><i>BlindLadder</i></div>
+        This game is totally fun<br>
+        All of us have played Snake and Ladder in our childhood.<br>
+        What if the snakes and ladder change their position on their own?<br>
+        This game deals with this question and give us a totally different experience with its random behaviour.<br>
+        It's based on your luck either you will win or lose.<br>
+        Let's enjoy this game....<br>
+        <button id="game_start" onclick="startgame()">Let's Play</button>
+    </div>
+    <div id="score_card">
+        <div id="dice_div" onclick="diceRoll()">
+            <div id="dice">
+                <div class="dice_dots6"> </div>
+                <div class="dice_dots6"> </div>
+                <div class="dice_dots6"> </div>
+                <div class="dice_dots6"> </div>
+                <div class="dice_dots6"> </div>
+                <div class="dice_dots6"> </div>
+            </div>
+        </div>
+    </div>
+    <div id="game_board">
+        <script>
+            for(var i=9;i>=0;i--){
+                if(i%2==1){
+                    for(var j=10;j>=1;j--){
+                        document.write('<div class="board_div" style="background-image: url(extraMaterial/'+(i*10+j)+'.png)" id="div_'+(i*10+j)+'" ></div>');
+                    }
+                }else{
+                    for(var j=1;j<=10;j++){
+                        document.write('<div class="board_div" style="background-image: url(extraMaterial/'+(i*10+j)+'.png)" id="div_'+(i*10+j)+'" ></div>');
+                    }
+                }
+            }
+        </script>
+    </div>
+    <div id="restart" onclick="gameRestart()">
+        <div class="gstart">R</div>
+        <div class="gstart">E</div>
+        <div class="gstart">S</div>
+        <div class="gstart">T</div>
+        <div class="gstart">A</div>
+        <div class="gstart">R</div>
+        <div class="gstart">T</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
