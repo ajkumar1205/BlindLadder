@@ -21,7 +21,7 @@ body {
     border-left: 10px solid green;
     border-right: 10px solid yellow;
     border-bottom: 10px solid blue;
-    box-shadow: 0px 0px 20px 10px gray;
+    box-shadow: 0px 0px 20px 10px black;
     /* border-radius: 30px; */
 }
 #game_title {
@@ -306,6 +306,28 @@ body {
     background-color: black;
     border-radius: 5px;
     box-shadow: 0px 0px 10px 5px gray;
+}
+.arrows {
+    display: none;
+    margin-top: 5px;
+    background-image: url(extraMaterial/arrow.png);
+    background-size: 100% 100%;
+    width: 40px;
+    height: 30px;
+}
+#arrow0 {
+    display: inline-block;
+}
+#score_box {
+    position: fixed;
+    left: 50vw;
+    top: 50vh;
+    width: 350px;
+    height: 450px;
+    transform: translate(-50%, -50%);
+    display: none;
+    background-color: blueviolet;
+    z-index: 31;
 }
 @keyframes snakeAnimation {
     0% {background-size: 50px 50px;}
