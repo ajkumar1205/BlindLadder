@@ -80,18 +80,20 @@ const movingIds = ["moving_img1", "moving_img2", "moving_img3", "moving_img4", "
 const borderColors = ["rgb(237, 28, 36)", "rgb(255, 174, 201)", "rgb(0, 0, 0)", "rgb(30, 36, 111)", "rgb(107, 48, 107)", "rgb(16, 86, 37)"];
 
 // CHANGES THE ALIGNMENT OF THE GAME_BOARD CONTACT_US AND SCORE_CARD
-window.addEventListener("resize", function(){
-    let length = window.innerWidth;
-    if(length<1120){
-        document.getElementById("contact_us").style.display = "none";
-        document.getElementById("game_board").style.left = 'calc(50% + 142px)';
-        document.getElementById("score_card").style.left = 'calc(50% - 279px)';
-    }else{
-        document.getElementById("contact_us").style.display = "block";
-        document.getElementById("game_board").style.left = "50vw";
-        document.getElementById("score_card").style.left = "calc(50% - 420px)";
-    }
-});
+if(!gameOver){
+    window.addEventListener("resize", function(){
+        let length = window.innerWidth;
+        if(length<1120){
+            document.getElementById("contact_us").style.display = "none";
+            document.getElementById("game_board").style.left = 'calc(50% + 142px)';
+            document.getElementById("score_card").style.left = 'calc(50% - 279px)';
+        }else{
+            document.getElementById("contact_us").style.display = "block";
+            document.getElementById("game_board").style.left = "50vw";
+            document.getElementById("score_card").style.left = "calc(50% - 420px)";
+        }
+    });
+}
 
 // FIRST FUNCTION TO RUN IN THE WHOLE PAGE
 function startgame(){
@@ -133,7 +135,7 @@ function main(){
     var playerString="";
     var movingImg="";
     for(let i=0;i<pCount;i++){
-        playerString+='<tr class="player_data"><td class="table_data"><img src="extraMaterial/'+colors[i]+'.png" id="'+colors[i]+'" class="player_images"></td><td class="table_data"><span id="id'+(i+1)+'" class="player_names" style="border: solid 4px '+borderColors[i]+'">'+playerList[i].name+'</span></td></tr>';
+        playerString+='<tr class="player_data"><td class="table_data"><img src="extraMaterial/'+colors[i]+'.png" id="'+colors[i]+'" class="player_images"></td><td class="table_data"><span id="id'+(i+1)+'" class="player_names" style="border: solid 4px '+borderColors[i]+'">'+playerList[i].name+'</span></td><td><div id="arrow'+(i)+'" class="arrows"></div></td></tr>';
         movingImg+='<img src="extraMaterial/'+colors[i]+'.png" id="moving_img'+(i+1)+'" class="moving_images">';
     }
 
@@ -168,7 +170,7 @@ async function diceRoll(){
     if((!diceRolling)&&(!gameOver)){
         diceRolling = true;
         var index = indexReturn();
-        console.log("Player no: "+(index+1));
+        // console.log("Player no: "+(index+1));
         globalThis.playerList;
         let rollTime = (1 +(parseInt(Math.random()*1000))%2)*1000;
         const rolling = setInterval(changeDot, 120);
@@ -226,6 +228,8 @@ async function diceRoll(){
             }, stepsTime);
             playerList[index].score = endScore;
         }
+        document.getElementById('arrow'+index).style.display = 'none';
+        document.getElementById('arrow'+(index+1)%pCount).style.display = 'inline-block';
         randomiser();
     }
 }
@@ -486,3 +490,5 @@ function gameRestart(){
     document.getElementById('restart').style.display = 'none';
     setTimeout(main, 400);
 }
+// NEEDS TO SETUP THE DESCRIPTION BOX WHICH WILL APPEAR AT THE END OF THE GAME REPRESENTING THE WINNING PLAYER
+// AND POSITIONS FOR OTHER PLAYERS :()
