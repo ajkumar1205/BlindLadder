@@ -166,12 +166,12 @@ function main(){
 // MAIN DICE ROLLING FUNCTION
 var diceRolling = false;
 async function diceRoll(){
-    globalThis.diceRolling;
+//     globalThis.diceRolling;
     if((!diceRolling)&&(!gameOver)){
         diceRolling = true;
         var index = indexReturn();
         // console.log("Player no: "+(index+1));
-        globalThis.playerList;
+//         globalThis.playerList;
         let rollTime = (1 +(parseInt(Math.random()*1000))%2)*1000;
         const rolling = setInterval(changeDot, 120);
         let dicePromise = new Promise((resolve)=>{
@@ -275,7 +275,7 @@ function oneStep(id){
 // RETURNS INDEX TO THE DICEROLL FUNCTION
 var index = -1;
 function indexReturn(){
-    globalThis.index;
+//     globalThis.index;
     index++;
     if(index===pCount){
         index=0;
@@ -288,7 +288,6 @@ function indexReturn(){
 
 // WILL BE USED FOR CHANGING POSITIONS OF LADDERS AND SNAKES
 function randomiser(){
-    globalThis.snakes1;
     snakes[0].bite = randRange(92, 100);
     snakes[0].tail = randRange(30, 22);
     snakes[1].bite = randRange(91, 100);
@@ -305,7 +304,7 @@ function randomiser(){
     snakes[6].tail = randRange(2, 10);
     snakes[7].bite = randRange(11, 20);
     snakes[7].tail = randRange(2, 10);
-    globalThis.ladladders
+    
     ladders[0].start = randRange(2, 10);
     ladders[0].end = randRange(51, 59);
     ladders[1].start = randRange(11, 21);
@@ -462,12 +461,12 @@ function geometry(xy){
 
 // FUNCTION TO RESET VARIABLES AND RESTART THE GAME WITHOUT RELOADING OF PAGE
 function gameRestart(){
-    globalThis.playerList;
-    globalThis.pCount;
-    globalThis.gameOver = false;
-    globalThis.index = -1;
-    globalThis.diceRolling = false;
-    globalThis.dValue = 0;
+//     globalThis.playerList;
+//     globalThis.pCount;
+    gameOver = false;
+    index = -1;
+    diceRolling = false;
+    dValue = 0;
     for(let i=0;i<pCount;i++){
         playerList.pop();
     }
